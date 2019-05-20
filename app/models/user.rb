@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :pets, foreign_key: "owner_id"
   has_many :bookings, foreign_key: "sitter_id"
   has_many :booked_pets, through: :bookings, source: "pet"
+  validates :name, presence: true, uniqueness: true
+  validates :email, presence: true
 end
