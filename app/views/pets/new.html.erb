@@ -1,16 +1,22 @@
-<h1>Create a Pet</h1>
+
+<div class="bg-add">
+<div class="login-container row justify-content-center">
+  <div class="col-10">
+<h1>Add my Pet</h1>
 
 <div class="container">
   <%= simple_form_for [@pet] do |f| %>
     <%= f.input :name %>
-
     <%= f.input :species, as: :radio_buttons, collection: %w[dog cat] %>
-
     <%= f.input :bio %>
     <%= f.input :age %>
-    <%= f.input :price %>
+    <span>Hourly<%= f.input :price %></span>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "add a pet", class: "btn btn-primary" %>
   <% end %>
 </div>
+</div>
+</div>
+</div>
+
