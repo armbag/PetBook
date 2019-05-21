@@ -1,37 +1,31 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1526363269865-60998e11d82d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
-  <div class="container">
-    <h1>Get paid to <strong>pet-sit</strong></h1>
+<!-- style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1526363269865-60998e11d82d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);"> -->
+<div class="home">
+<div class="container">
+
+  <h1>Get paid to <strong>pet-sit</strong></h1>
     <p>Care for adorable pets while their owners are on vacation and earn extra cash!</p>
-    <%= link_to "See pets", pets_path, class: "btn btn-success"  %>
-  </div>
-</div>
 
-<h1>TEST</h1>
-
-<%= form_tag(pets_path, method: :get) do %>
-  <%= label_tag :name %>
-  <%= text_field_tag :name %>
+  <%= form_tag(pets_path, method: :get) do %>
+  <%= label_tag :location %>
+  <%= text_field_tag :loaction %>
+  <br>
   <br>
   <%= label_tag :cat %>
   <%= radio_button_tag 'species','cat' %>
   <%= label_tag :dog %>
   <%= radio_button_tag 'species','dog' %>
+
   <br>
-  <%= label_tag :bio %>
-  <%= text_area_tag :bio %>
   <br>
-  <%= label_tag :age %>
-  <%= text_field_tag :age %>
+  <span>Start Date <%= date_field_tag :start %> End Date <%= date_field_tag :end %></span>
+
+
+
   <br>
-  <%= label_tag :price %>
-  <%= text_field_tag :price %>
   <br>
-  <%= label_tag :start %>
-  <%= date_field_tag :start %>
-  <%= label_tag :end %>
-  <%= date_field_tag :end %>
-  <%= submit_tag %>
+  <%= link_to "See pets", pets_path, class: "btn btn-success" %>
 <% end %>
+</div>
 
 <div class="footer">
   <div class="footer-links">
@@ -44,4 +38,5 @@
   <div class="footer-copyright">
     Made with <i class="fas fa-heart"></i> at Le Wagon
   </div>
+</div>
 </div>
