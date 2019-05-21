@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:show]
+  before_action :set_pet, only: [:show, :destroy]
 
   def index
     @pets = Pet.all
@@ -25,6 +25,11 @@ class PetsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @pet.destroy
+    redirect_to pets_path
   end
 
   private
