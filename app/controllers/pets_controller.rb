@@ -6,7 +6,6 @@ class PetsController < ApplicationController
   end
 
   def show
-    @pet = Pet.new
   end
 
   def new
@@ -15,9 +14,11 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
+    @pet.owner = current_user
     if @pet.save
       redirect_to pets_path(@pet)
     else
+      p @pet.errors
       render :new
     end
   end
