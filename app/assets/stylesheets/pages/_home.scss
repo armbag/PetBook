@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+body {
+  background-image:url("https://images.unsplash.com/photo-1526363269865-60998e11d82d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 100vh;
+}
+
+.home {
+  background-color: #ffffff;
+  width:600px;
+  margin-top: 100px;
+  margin-left:50px;
+  padding:20px;
+}
