@@ -1,10 +1,15 @@
-<div class="login-container row justify-content-centter">
-  <div class="col-4">
-    <h2>Sign up</h2>
+<div class="container">
+<div class="login-container row justify-content-center">
+  <div class="col-6">
+    <h2 class="text-center">Sign up</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" }%>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
@@ -18,11 +23,14 @@
                     input_html: { autocomplete: "new-password" } %>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+      <div class="form-actions btn-pets">
+        <%= f.button :submit, "Sign up", class: "btn-pets"  %>
       </div>
     <% end %>
 
+    <div class="links">
     <%= render "devise/shared/links" %>
+    </div>
   </div>
+</div>
 </div>
