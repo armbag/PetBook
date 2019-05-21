@@ -2,12 +2,12 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show]
 
   def index
-    @pets = Pet.where(species: params[:species])
-    @pets = Pet.where(name: params[:name])
-    @pets = Pet.where(bio: params[:bio])
-    @pets = Pet.where(age: params[:age])
-    @pets = Pet.where(price: params[:price])
-
+    @pets = Pet.all
+    @pets = @pets.where(species: params[:species]) unless params[:species].blank?
+    @pets = @pets.where(name: params[:name]) unless params[:name].blank?
+    @pets = @pets.where(bio: params[:bio]) unless params[:bio].blank?
+    @pets = @pets.where(age: params[:age]) unless params[:age].blank?
+    @pets = @pets.where(price: params[:price]) unless params[:price].blank?
   end
 
   def show
