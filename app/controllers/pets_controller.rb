@@ -2,7 +2,12 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show]
 
   def index
-    @pets = Pet.where(species: params[:name, :species, :bio, :age, :price, :start, :end])
+    @pets = Pet.where(species: params[:species])
+    @pets = Pet.where(name: params[:name])
+    @pets = Pet.where(bio: params[:bio])
+    @pets = Pet.where(age: params[:age])
+    @pets = Pet.where(price: params[:price])
+
   end
 
   def show
@@ -18,7 +23,6 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to pets_path(@pet)
     else
-      p @pet.errors
       render :new
     end
   end
