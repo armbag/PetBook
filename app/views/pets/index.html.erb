@@ -1,0 +1,11 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+    <h1>Welcome!</h1>
+    <h1>What pet do you want to take care of ?</h1>
+
+    <% @pets.each do |pet| %>
+      <p><%=link_to pet.name, pet_path(pet) %></p>
+    <% end %>
+    <%= link_to "Add a pet", new_pet_path, class: "btn btn-primary"%>
+  </div>
+</div>
