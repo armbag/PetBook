@@ -6,7 +6,32 @@
   </div>
 </div>
 
+<h1>TEST</h1>
 
+<%= form_tag(pets_path, method: :get) do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br>
+  <%= label_tag :cat %>
+  <%= radio_button_tag 'species','cat' %>
+  <%= label_tag :dog %>
+  <%= radio_button_tag 'species','dog' %>
+  <br>
+  <%= label_tag :bio %>
+  <%= text_area_tag :bio %>
+  <br>
+  <%= label_tag :age %>
+  <%= text_field_tag :age %>
+  <br>
+  <%= label_tag :price %>
+  <%= text_field_tag :price %>
+  <br>
+  <%= label_tag :start %>
+  <%= date_field_tag :start %>
+  <%= label_tag :end %>
+  <%= date_field_tag :end %>
+  <%= submit_tag %>
+<% end %>
 
 <div class="footer">
   <div class="footer-links">

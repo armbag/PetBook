@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show]
 
   def index
-    @pets = Pet.all
+    @pets = Pet.where(species: params[:name, :species, :bio, :age, :price, :start, :end])
   end
 
   def show
