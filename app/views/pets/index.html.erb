@@ -6,6 +6,7 @@
     <% @pets.each do |pet| %>
       <p><%=link_to pet.name, pet_path(pet) %></p>
       <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %>
+      <%= link_to 'Delete this pet', pet_path(pet), method: :delete %>
     <% end %>
     <%= link_to "Add a pet", new_pet_path, class: "btn btn-primary"%>
   </div>
