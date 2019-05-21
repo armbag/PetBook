@@ -3,7 +3,10 @@
 <div class="container">
   <%= simple_form_for [@pet] do |f| %>
     <%= f.input :name %>
-    <%= f.input :species %>
+    <%= label_tag :cat %>
+    <%= radio_button_tag 'species','cat' %>
+    <%= label_tag :dog %>
+    <%= radio_button_tag 'species','dog' %>
     <%= f.input :bio %>
     <%= f.input :age %>
     <%= f.input :price %>
