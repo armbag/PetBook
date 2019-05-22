@@ -10,11 +10,11 @@ class PetsController < ApplicationController
     # @pets = @pets.where(bio: params[:bio]) unless params[:bio].blank?
     # @pets = @pets.where(age: params[:age]) unless params[:age].blank?
     # @pets = @pets.where(price: params[:price]) unless params[:price].blank?
-    @pets = policy_scope(Pet).where.not(latitude: nil, longitude: nil).order(created_at: :desc)
+    @pets = policy_scope(Pet).joins(:owner).where.not(users: {latitude: nil, longitude: nil}).order(created_at: :desc)
 
     @markers = @pets.map do |pet|
-      { lat: user[pet.latitude],
-        lng: user[pet.longitude] }
+      { lat: pet.owner.latitude,
+        lng: pet.owner.longitude }
     end
   end
 
