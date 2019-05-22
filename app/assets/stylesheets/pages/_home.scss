@@ -3,7 +3,7 @@
   background-image:url("https://images.unsplash.com/photo-1526363269865-60998e11d82d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-repeat: no-repeat;
   background-size:cover;
-  // height: 100vh;
+  height: 700px;
   padding: 100px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .card {
-  width: 200px;
+  width: 300px;
   border-radius: 3px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
@@ -35,7 +35,6 @@
 
 .cards {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 30px;
 }

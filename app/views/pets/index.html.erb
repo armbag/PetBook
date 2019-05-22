@@ -1,3 +1,7 @@
+<div class="container">
+  <div class="col-">
+    <div class="container">
+          <div class="row">
 
 <% @pets.each do |pet| %>
   <div class="card-trip">
@@ -13,3 +17,25 @@
   </div>
   </div>
 <% end %>
+
+
+  
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="d-flex justify-content-center">
+              <% if policy(Pet).create? %>
+                <%= link_to "Add a pet", new_pet_path, class: "btn btn-primary"%>
+                <% else %>
+                <%= link_to "subscribe", new_user_session_path, class: "btn btn-primary" %>
+              <% end %>
+        </div>
+
+
+
+
+  </div>
+</div>
