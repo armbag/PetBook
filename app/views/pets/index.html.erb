@@ -6,8 +6,15 @@
     <% @pets.each do |pet| %>
       <p><%=link_to pet.name, pet_path(pet) %></p>
       <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %>
-      <%= link_to 'Delete this pet', pet_path(pet), method: :delete %>
+      <% if policy(pet).destroy? %>
+        <%= link_to 'Delete this pet', pet_path(pet), method: :delete %>
+      <% end %>
     <% end %>
-    <%= link_to "Add a pet", new_pet_path, class: "btn btn-primary"%>
+    <% if policy(Pet).create? %>
+      <%= link_to "Add a pet", new_pet_path, class: "btn btn-primary"%>
+      <% else %>
+      <%= link_to "subscribe", new_user_session_path %>
+    <% end %>
   </div>
 </div>
+
