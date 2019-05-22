@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+3.times do
+  User.create!(
+    email: Faker::Internet.email,
+    password: "qwerty",
+    name: Faker::Name.unique.name,
+    bio: "I love my pets",
+    location: "Lyon",
+    remote_avatar_url: "https://source.unsplash.com/featured/?person"
+    )
+end

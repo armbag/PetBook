@@ -4,6 +4,10 @@ class PetPolicy < ApplicationPolicy
     user
   end
 
+  def show
+    true
+  end
+
   def destroy?
     record.owner == user
   end
