@@ -1,13 +1,15 @@
-<div class="row justify-content-center">
-  <div class="col-4">
-    <h1>Welcome!</h1>
-    <h1>What pet do you want to take care of ?</h1>
 
-    <% @pets.each do |pet| %>
-      <p><%=link_to pet.name, pet_path(pet) %></p>
-      <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %>
-      <%= link_to 'Delete this pet', pet_path(pet), method: :delete %>
-    <% end %>
-    <%= link_to "Add a pet", new_pet_path, class: "btn btn-primary"%>
+<% @pets.each do |pet| %>
+  <div class="card-trip">
+    <%= cl_image_tag(pet.photo) %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= pet[:name] %></h2>
+        <p><%= pet[:bio] %></p>
+      </div>
+      <h2 class="card-trip-pricing">$<%= pet[:price] %></h2>
+      <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40,
+             :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
   </div>
-</div>
+  </div>
+<% end %>
