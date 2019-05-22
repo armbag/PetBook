@@ -1,8 +1,13 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:index, :show, :new, :create]
+  before_action :set_booking, only: [:index, :show, :create]
+
+  def index
+    @bookings = Booking.all
+  end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
