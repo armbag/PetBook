@@ -6,7 +6,7 @@
 
   <%= form_tag(pets_path, method: :get) do %>
   <%= label_tag :location %>
-  <%= text_field_tag :loaction %>
+  <%= text_field_tag :location, nil, placeholder:'Enter postcode...'%>
   <br>
   <br>
   <%= label_tag :cat %>

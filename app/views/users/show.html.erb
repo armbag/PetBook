@@ -1,2 +1,15 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="block row justify-content-center">
+  <div class="col-10">
+
+    <h1 class="text-center">My Profile</h1>
+
+      <p>Hi <%= @user.name.capitalize %>!</p>
+
+      <%=cl_image_tag(@user.avatar,width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
+      <p>Address: <%= @user.location %></p>
+
+
+</div>
+</div>
+
