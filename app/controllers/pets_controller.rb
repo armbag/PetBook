@@ -24,11 +24,10 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.owner = current_user
-    raise
     authorize @pet
     if @pet.save
-      format.html { redirect_to @pet, notice: 'pet was successfully created.' }
-      format.json { render :show, status: :created, location: @pet }
+      # format.html { redirect_to root_path, notice: 'pet was successfully created.' }
+      # format.json { render :show, status: :created, location: @pet }
       redirect_to pets_path(@pet)
     else
       format.html { render :new }
@@ -38,8 +37,9 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    @pet.destroy
-    redirect_to pets_path
+    if current_user == @article.user
+      @article.destroy
+    end
   end
 
   private
