@@ -1,12 +1,87 @@
 <div class="bg-profile">
-  <div class="profile-block">
-    <div class="card">
+  <div class="profile-block justify-content-center">
+    <h1 class="text-center">My Profile</h1>
+    <%=cl_image_tag(@user.avatar, width: 120, height: 120, :crop => :thumb, gravity: :face, class: "card-trip-user avatar-bordered") %>
+    <p class="text-center">Hi <%= @user.name.capitalize %>!</p>
+    <p class="text-center">Address: <%= @user.location %></p>
+    <p class="text-center">My Current Listings</p>
+    <div class="row">
+
+    <% @user.pets.each do |pet| %>
+
+      <div class="col-12 col-lg-6">
+        <div class="card">
+
+          <%= link_to pet_path(pet) do %>
+            <div class="card-trip p-4 m-2">
+              <%= cl_image_tag(pet.photo, class: 'main-img') %>
+              <div class="card-trip-infos">
+                <div>
+                  <p>Name: <%= pet[:name] %></p>
+                  <p>Bio: <%= pet[:bio] %></p>
+                  <p>Species :<%= pet[:species] %></p>
+                  <p>Age :<%= pet[:age] %></p>
+                  <p>Hourly price :<%= pet[:price] %></p>
+                  <br>
+                  <%= link_to "View Listing", pet_path(pet), class: "btn btn-pets" %></p>
+                </div>
+                <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
+              </div>
+            </div>
+          <% end %>
+
+
+
+        </div>
+      </div>
+
+    <% end %>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="bg-profile">
+    <div class="profile-block cards justify-content-center">
+    <div class= "row">
+    <div class="col-10">
      <h1 class="text-center">My Profile</h1>
 
      <%=cl_image_tag(@user.avatar, width: 120, height: 120, :crop => :thumb, gravity: :face, class: "card-trip-user avatar-bordered") %>
      <p class="text-center">Hi <%= @user.name.capitalize %>!</p>
      <p class="text-center">Address: <%= @user.location %></p>
-     <h3 class="text-center">My Current Listings</h3>
+     <p class="text-center">My Current Listings</p>
 
 
       <% @user.pets.each do |pet| %>
@@ -22,7 +97,7 @@
                   <p>Age :<%= pet[:age] %></p>
                   <p>Hourly price :<%= pet[:price] %></p>
                   <br>
-                  <%= link_to "View Listing", pets_path, class: "btn btn-pets" %></p>
+                  <%= link_to "View Listing", pet_path(pet), class: "btn btn-pets" %></p>
                 </div>
                 <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
               </div>
@@ -33,7 +108,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
