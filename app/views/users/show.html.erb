@@ -1,15 +1,41 @@
-<div class="block row justify-content-center">
-  <div class="col-10">
+<div class="bg-profile">
+  <div class="profile-block">
+    <div class="card">
+     <h1 class="text-center">My Profile</h1>
 
-    <h1 class="text-center">My Profile</h1>
-
-      <p>Hi <%= @user.name.capitalize %>!</p>
-
-      <%=cl_image_tag(@user.avatar,width: 150, height: 150, crop: :thumb, gravity: :face) %>
-
-      <p>Address: <%= @user.location %></p>
+     <%=cl_image_tag(@user.avatar, width: 120, height: 120, :crop => :thumb, gravity: :face, class: "card-trip-user avatar-bordered") %>
+     <p class="text-center">Hi <%= @user.name.capitalize %>!</p>
+     <p class="text-center">Address: <%= @user.location %></p>
+     <h3 class="text-center">My Current Listings</h3>
 
 
+      <% @user.pets.each do |pet| %>
+
+      <%= link_to pet_path(pet) do %>
+            <div class="card-trip p-4 m-2">
+              <%= cl_image_tag(pet.photo) %>
+              <div class="card-trip-infos">
+                <div>
+                  <p>Name: <%= pet[:name] %></p>
+                  <p>Bio: <%= pet[:bio] %></p>
+                  <p>Species :<%= pet[:species] %></p>
+                  <p>Age :<%= pet[:age] %></p>
+                  <p>Hourly price :<%= pet[:price] %></p>
+                  <br>
+                  <%= link_to "View Listing", pets_path, class: "btn btn-pets" %></p>
+                </div>
+                <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+
+
+
+
 

@@ -30,7 +30,7 @@ class PetsController < ApplicationController
     @pet.owner = current_user
     authorize @pet
     if @pet.save
-      redirect_to pet_path(@pet), notice: 'pet was successfully created.'
+      redirect_to user_path(@pet), notice: 'pet was successfully created.'
     else
       format.html { render :new }
       format.json { render json: @pet.errors, status: :unprocessable_entity }
