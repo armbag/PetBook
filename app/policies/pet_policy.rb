@@ -4,7 +4,7 @@ class PetPolicy < ApplicationPolicy
     user
   end
 
-  def show
+  def show?
     true
   end
 
