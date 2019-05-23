@@ -1,3 +1,5 @@
+
+
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :destroy]
   skip_before_action :authenticate_user!, only: :index
