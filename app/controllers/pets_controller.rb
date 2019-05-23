@@ -7,12 +7,10 @@ class PetsController < ApplicationController
 
   def index
 
-    @pets = Pet.all
-    @pets = @pets.joins(:owner).where("users.location ilike ?", params[:location]) unless params[:location].blank?
+    @pets = policy_scope(Pet)
     @pets = @pets.where(species: params[:species]) unless params[:species].blank?
-    @pets = @pets.where(location: params[:location]) unless params[:location].blank?
-    @pets = policy_scope(Pet).joins(:owner).where.not(users: {latitude: nil, longitude: nil}).order(created_at: :desc)
-
+    @pets = @pets.joins(:owner).where.not(users: {latitude: nil, longitude: nil}).order(created_at: :desc)
+    @pets = @pets.near(params[:location], 100) unless params[:location].blank?
     @markers = @pets.map do |pet|
       { lat: pet.owner.latitude,
         lng: pet.owner.longitude }
@@ -32,9 +30,7 @@ class PetsController < ApplicationController
     @pet.owner = current_user
     authorize @pet
     if @pet.save
-      # format.html { redirect_to root_path, notice: 'pet was successfully created.' }
-      # format.json { render :show, status: :created, location: @pet }
-      redirect_to pets_path(@pet)
+      redirect_to pet_path(@pet), notice: 'pet was successfully created.'
     else
       format.html { render :new }
       format.json { render json: @pet.errors, status: :unprocessable_entity }
