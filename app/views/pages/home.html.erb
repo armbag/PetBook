@@ -6,7 +6,10 @@
 
   <%= form_tag(pets_path, method: :get) do %>
   <%= label_tag :location %>
-  <%= text_field_tag :location, nil, placeholder:'Enter postcode...'%>
+  <%= text_field_tag :location,
+   params[:location],
+   class: "form-control",
+  placeholder:'Enter postcode...'%>
   <br>
   <br>
   <%= label_tag :cat %>
@@ -22,7 +25,7 @@
 
   <br>
   <br>
-  <%= link_to "See pets", pets_path, class: "btn-pets btn-sm" %>
+  <%= submit_tag "See pets", class: "btn-pets btn-sm" %>
 <% end %>
 </div>
 
