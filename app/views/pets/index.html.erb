@@ -4,38 +4,27 @@
           <div class="row">
 
 <% @pets.each do |pet| %>
-  <div class="card-trip">
-    <%= cl_image_tag(pet.photo) %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= pet[:name] %></h2>
-        <p><%= pet[:bio] %></p>
+  <%= link_to pet_path(pet) do %>
+    <div class="card-trip">
+      <%= cl_image_tag(pet.photo) %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= pet[:name] %></h2>
+          <p><%= pet[:bio] %></p>
+        </div>
+        <h2 class="card-trip-pricing">$<%= pet[:price] %></h2>
+        <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
       </div>
-      <h2 class="card-trip-pricing">$<%= pet[:price] %></h2>
-      <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40,
-             :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
-  </div>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 
 
-  
-          </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="d-flex justify-content-center">
-              <% if policy(Pet).create? %>
-                <%= link_to "Add a pet", new_pet_path, class: "btn btn-primary"%>
-                <% else %>
-                <%= link_to "subscribe", new_user_session_path, class: "btn btn-primary" %>
-              <% end %>
-        </div>
 
 
 
 
   </div>
 </div>
+
+
