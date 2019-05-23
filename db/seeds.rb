@@ -5,18 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 require 'faker'
 
 Pet.destroy_all
 User.destroy_all
 
-# users
 user1 = User.create!({
   email: Faker::Internet.email,
   password: "qwerty",
   name: Faker::Name.unique.name,
   bio: "I love my pets",
-  location: "Lyon",
+  location: "Lyon part dieu",
   remote_avatar_url: "https://images.unsplash.com/photo-1548535537-3cfaf1fc327c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
 })
 user2 = User.create!({
@@ -32,7 +32,7 @@ user3 = User.create!({
   password: "qwerty",
   name: Faker::Name.unique.name,
   bio: "Love travel and cute animals",
-  location: "Lyon",
+  location: "Lyon 69001",
   remote_avatar_url: "https://images.unsplash.com/photo-1554453433-9af917b6f571?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
 })
 user4 = User.create!({
@@ -48,7 +48,7 @@ user5 = User.create!({
   password: "qwerty",
   name: Faker::Name.unique.name,
   bio: "Love food, travel, and cats. Dogs are OK too.",
-  location: "Lyon",
+  location: "Villeurbanne",
   remote_avatar_url: "https://images.unsplash.com/photo-1493732839258-ca76fb5d09ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })
 user6 = User.create!({
@@ -56,7 +56,7 @@ user6 = User.create!({
     password: "qwerty",
     name: Faker::Name.unique.name,
     bio: "Full stack web programmer and proud dog owner.",
-    location: "Paris",
+    location: "Paris barbes",
     remote_avatar_url: "https://images.unsplash.com/photo-1497948408037-3f93f842fc5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })
 

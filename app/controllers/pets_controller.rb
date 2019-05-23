@@ -1,3 +1,5 @@
+
+
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :destroy]
   skip_before_action :authenticate_user!, only: :index
@@ -10,7 +12,12 @@ class PetsController < ApplicationController
     # @pets = @pets.where(bio: params[:bio]) unless params[:bio].blank?
     # @pets = @pets.where(age: params[:age]) unless params[:age].blank?
     # @pets = @pets.where(price: params[:price]) unless params[:price].blank?
-    @pets = policy_scope(Pet).order(created_at: :desc)
+    @pets = policy_scope(Pet).joins(:owner).where.not(users: {latitude: nil, longitude: nil}).order(created_at: :desc)
+
+    @markers = @pets.map do |pet|
+      { lat: pet.owner.latitude,
+        lng: pet.owner.longitude }
+    end
   end
 
   def show
@@ -37,8 +44,8 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    if current_user == @article.user
-      @article.destroy
+    if current_user == @pet.user
+      @pet.destroy
     end
   end
 
