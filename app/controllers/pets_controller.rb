@@ -25,7 +25,7 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
-    authorize @pet
+    # authorize @pet
   end
 
   def create
@@ -53,7 +53,7 @@ class PetsController < ApplicationController
 
   def set_pet
     @pet = Pet.find(params[:id])
-    authorize @pet
+    # authorize @pet
   end
 
   def pet_params
