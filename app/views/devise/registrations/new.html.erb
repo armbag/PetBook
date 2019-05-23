@@ -10,7 +10,7 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "name" }%>
-        <%= f.input :location, placeholder:"Enter postcode",
+        <%= f.input :location, placeholder:"Enter city",
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "location" }%>
@@ -27,14 +27,9 @@
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :avatar %>
         <%= f.input :avatar_cache, as: :hidden %>
-
-      </div>
-
-      <div class="form-actions btn-pets">
-        <%= f.button :submit, "Sign up", class: "btn-pets"  %>
-      </div>
+        <%= f.button :submit, "Sign up", class: "form-actions btn-pets btn-block" %>
     <% end %>
-
+<br>
     <div class="links">
     <%= render "devise/shared/links" %>
     </div>

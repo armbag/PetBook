@@ -2,14 +2,14 @@
 <div class="block">
 
   <h1>Get paid to <strong>pet-sit</strong></h1>
-    <p>Care for adorable pets while their owners are on vacation and earn extra cash!</p>
+  <p>Care for adorable pets while their owners are on vacation and earn extra cash!</p>
 
   <%= form_tag(pets_path, method: :get) do %>
   <%= label_tag :location %>
   <%= text_field_tag :location,
    params[:location],
    class: "form-control",
-  placeholder:'Enter postcode...'%>
+  placeholder:'Enter city'%>
   <br>
   <%= label_tag :cat %>
   <%= radio_button_tag 'species','cat' %>
@@ -31,7 +31,7 @@
 
 <div class="mx-auto mt-3 p-3">
 
-<h1 class="heading text-center p-3">Why use PetBooking ?</h1>
+<h2 class="heading text-center p-3">Why use PetBooking ?</h2>
   <div class="card-container text-center p-3 mt-3 d-flex justify-content-around">
     <div>
       <div class="card card-image">
@@ -62,14 +62,14 @@
 
 <div class="mx-auto mt-3 p-3">
 
-<h1 class="heading text-center p-3">Latest Reviews</h1>
+<h2 class="heading text-center p-3">Latest Reviews</h2>
   <div id="carouselExampleControls" class="carousel slide justify-content-center" data-ride="carousel">
 
   <div class="carousel-inner justify-content-center">
     <div class="carousel-item active">
       <div class="card-container text-center p-4 mt-3 d-flex justify-content-around">
       <div class="block justify-content-center text-center">
-      <h1 class="text-center">Great website !!</h1>
+      <h3 class="text-center">Great website !!</h3>
       <p class="text-center">Super easy to use !</p>
       <p class="text-center">Amy - Lyon</p>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -84,7 +84,7 @@
       <div class="carousel-item">
         <div class="card-container text-center p-4 mt-3 d-flex justify-content-around">
       <div class="block justify-content-center text-center">
-      <h1 class="text-center">Great for Pet lovers</h1>
+      <h3 class="text-center">Great for Pet lovers</h3>
       <p class="text-center">Super easy to use !</p>
       <p class="text-center">Elle - Lyon</p>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -99,7 +99,7 @@
       <div class="carousel-item">
         <div class="card-container text-center p-4 mt-3 d-flex justify-content-around">
       <div class="block justify-content-center text-center">
-      <h1 class="text-center">So Happy</h1>
+      <h3 class="text-center">So Happy</h3>
       <p class="text-center">Super easy to use !</p>
       <p class="text-center">Cassie - Lyon</p>
       <i class="fa fa-star" aria-hidden="true"></i>
