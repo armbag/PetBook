@@ -3,27 +3,36 @@
     <div class="container">
           <div class="row">
 
-<% @pets.each do |pet| %>
-  <div class="card-trip">
-    <%= cl_image_tag(pet.photo) %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= pet[:name] %></h2>
-        <p><%= pet[:bio] %></p>
-      </div>
-      <h2 class="card-trip-pricing">$<%= pet[:price] %></h2>
-      <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40,
-             :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
-  </div>
-  </div>
-<% end %>
+              <div class="card-trip">
+                <% @pets.each do |pet| %>
+                <%=link_to cl_image_tag(pet.photo), pet_path(pet), :width => 100, :height => 100 %>
+                  <div class="card-trip-infos">
+                    <div>
+                      <h2><%= pet[:name] %></h2>
+                      <p><%= pet[:bio] %></p>
+                    </div>
+                    <div class="card-trip-pricing">
+                      <h2>$<%= pet[:price] %></h2>
+                    </div>
+                    <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40,
+                    :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
+                  </div>
+                <% end %>
+              </div>
 
 
-  
+
+
           </div>
         </div>
         <br>
-        <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <div
+          id="map"
+          style="width: 100%;
+          height: 600px; background-color: red"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
         <br>
         <br>
         <br>
