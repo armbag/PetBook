@@ -94,7 +94,7 @@ Pet.create!({
   bio: "I am a playful cat and I like to sleep.",
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
-  owner: user3,
+  owner: user2,
   remote_photo_url: "https://images.unsplash.com/photo-1513421181656-4446bef18317?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80"
 })
 Pet.create!({
@@ -114,4 +114,31 @@ Pet.create!({
   price: "50",
   owner: user3,
   remote_photo_url: "https://images.unsplash.com/photo-1497473376897-16fbb7552478?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+})
+Pet.create!({
+  name: Faker::Creature::Cat.name,
+  species: "dog",
+  bio: "I am an adorable dog and I like long walks on the beach.",
+  age: %w(1 2 3 4 5 6 7 8 9).sample,
+  price: "50",
+  owner: user4,
+  remote_photo_url: "https://images.unsplash.com/photo-1475954704693-ac6850a71ee0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+})
+Pet.create!({
+  name: Faker::Creature::Cat.name,
+  species: "cat",
+  bio: "I am a playful cat and I like to sleep.",
+  age: %w(1 2 3 4 5 6 7 8 9).sample,
+  price: "50",
+  owner: user5,
+  remote_photo_url: "https://images.unsplash.com/photo-1502083896352-259ab9e342d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+})
+Pet.create!({
+  name: Faker::Creature::Cat.name,
+  species: "dog",
+  bio: "I am an adorable dog and I like long walks on the beach.",
+  age: %w(1 2 3 4 5 6 7 8 9).sample,
+  price: "50",
+  owner: user6,
+  remote_photo_url: "https://images.unsplash.com/photo-1446231855385-1d4b0f025248?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })

@@ -1,8 +1,8 @@
 .login-container {
   background-color: #ffffff;
   margin-top: 100px;
-  padding:20px;
-  width:400px;
+  padding: 20px;
+  width: 400px;
   padding-right: 0;
   margin-right: 0;
   padding-left: 0;
@@ -10,7 +10,6 @@
   margin: 0 auto;
   opacity: 0.9;
   border-radius: 4px;
-  font-size:14px;
 }
 
 
@@ -42,5 +41,8 @@
   background-size:cover;
   height: 100vh;
   padding: 100px;
+}
 
+.bigger-container {
+  width: 600px;
 }
