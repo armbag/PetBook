@@ -1,7 +1,11 @@
 <div class="bg-profile">
   <div class="profile-block justify-content-center">
     <h1 class="text-center">My Profile</h1>
+    <br>
+
     <%=cl_image_tag(@user.avatar, width: 120, height: 120, :crop => :thumb, gravity: :face, class: "card-trip-user avatar-bordered") %>
+    <br>
+    <br>
     <p class="text-center">Hi <%= @user.name.capitalize %>!</p>
     <p class="text-center">Address: <%= @user.location %></p>
     <p class="text-center">My Current Listings</p>
@@ -19,9 +23,9 @@
                 <div>
                   <p>Name: <%= pet[:name] %></p>
                   <p>Bio: <%= pet[:bio] %></p>
-                  <p>Species :<%= pet[:species] %></p>
-                  <p>Age :<%= pet[:age] %></p>
-                  <p>Hourly price :<%= pet[:price] %></p>
+                  <p>Species: <%= pet[:species] %></p>
+                  <p>Age: <%= pet[:age] %></p>
+                  <p>Hourly price: <%= pet[:price] %></p>
                   <br>
                   <%= link_to "View Listing", pet_path(pet), class: "btn btn-pets" %></p>
                 </div>
@@ -39,6 +43,10 @@
 
 
     </div>
+    <br>
+    <br>
+    <%= link_to "Add a Pet", new_pet_path, class: "btn btn-pets" %></p></h1>
+    <h1>Current Bookings</h1>
   </div>
 </div>
 
