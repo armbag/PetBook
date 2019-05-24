@@ -6,7 +6,7 @@
     <p class="text-center">My Current Listings</p>
     <% @user.pets.each do |pet| %>
       <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6 m-2">
           <div class="card">
             <%= link_to pet_path(pet) do %>
               <div class="card-trip p-4 m-2">
@@ -21,14 +21,14 @@
             <% end %>
           </div>
         </div>
-    <% end %>
-
-
-    </div>
+      <% end %>
+      </div>
     <br>
     <br>
       <%= link_to "Add a Pet", new_pet_path, class: "btn btn-pets" %></p></h1>
       <h1>Current Bookings</h1>
+    </div>
+    </div>
     </div>
 
 
