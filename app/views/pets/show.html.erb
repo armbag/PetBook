@@ -1,8 +1,8 @@
 <div class="bg-pet-profile">
-  <div class="justify-content-center">
-        <div class="row justify-content-center">
+  <div class="row justify-content-center">
+        <div class="justify-content-center">
           <div class="col-12 col-lg-6 justify-content-center">
-          <div class="info-card justify-content-center">
+          <div class="pet-info-card justify-content-center">
             <%= cl_image_tag(@pet.photo, class: "pet-avatar-bordered") %>
           <br>
           <h3 class="specialbluetext mt-2"><strong><%= @pet.name %></strong></h3>
@@ -12,7 +12,7 @@
               <p>Sitter receives $<%= @pet.price %>/hour</p>
               <p>Owned by <%= @pet.owner.name %></p>
 
-              <p>from <%= @pet.from %> to <%= @pet.to %></p>
+              <p>Available dates: <%= @pet.from %> to <%= @pet.to %></p>
               <%= link_to "Contact the owner", new_pet_booking_path(@pet) , class: "btn btn-pets" %></p>
 
         </div>
