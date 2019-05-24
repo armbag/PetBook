@@ -1,0 +1,38 @@
+.bg-login {
+  background-image:url("https://images.unsplash.com/photo-1529764002524-49fd6db4130f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60");
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 100vh;
+  padding: 100px;
+}
+
+.bg-signup {
+  background-image:url("https://images.unsplash.com/photo-1541612638194-4cde9f258866?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60");
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 100vh;
+  padding: 10px;
+}
+
+.bg-add {
+  background-image:url("https://images.unsplash.com/photo-1551730459-92db2a308d6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800px&q=60");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: cover;
+  padding: 50px;
+  max-width: 100%;
+  min-height:100vh;
+//   -webkit-background-size: cover;
+// -moz-background-size: cover;
+// -o-background-size: cover;
+// background-size: center;
+// background-attachment:fixed;
+}
+
+.bg-profile {
+  background-image:url("https://images.unsplash.com/photo-1481134803835-48d6de104072?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60");
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 100px;
+  min-height:100vh;
+}
