@@ -6,12 +6,16 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @pet = Pet.find(params[:pet_id])
     @booking = Booking.new
     authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.sitter = current_user
+    @booking.start = params[:start]
+    @booking.end = params[:end]
     if @booking.save
       redirect_to pet_bookings_path(@booking)
     else

@@ -11,10 +11,12 @@
               <p>Age: <%= @pet.age %></p>
               <p>Sitter receives $<%= @pet.price %>/hour</p>
               <p>Owned by <%= @pet.owner.name %></p>
-              <%= link_to "Contact the owner !", user_path, class: "btn btn-pets" %></p>
+
+              <p>from <%= @pet.from %> to <%= @pet.to %></p>
+              <%= link_to "Contact the owner", new_pet_booking_path(@pet) , class: "btn btn-pets" %></p>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_22_145202) do
+ActiveRecord::Schema.define(version: 2019_05_24_094634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 2019_05_22_145202) do
     t.index ["sitter_id"], name: "index_bookings_on_sitter_id"
   end
 
+  create_table "meetings", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.bigint "pet_id"
+    t.bigint "sitter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_meetings_on_pet_id"
+    t.index ["sitter_id"], name: "index_meetings_on_sitter_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.string "species"
@@ -36,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_05_22_145202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.date "from"
+    t.date "to"
     t.index ["owner_id"], name: "index_pets_on_owner_id"
   end
 
@@ -59,5 +72,7 @@ ActiveRecord::Schema.define(version: 2019_05_22_145202) do
 
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "users", column: "sitter_id"
+  add_foreign_key "meetings", "pets"
+  add_foreign_key "meetings", "users", column: "sitter_id"
   add_foreign_key "pets", "users", column: "owner_id"
 end
