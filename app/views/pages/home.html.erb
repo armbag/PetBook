@@ -1,5 +1,5 @@
 <div class="bg-home">
-  <div class="block col-12 col-lg-6">
+  <div class="block-home col-12 col-lg-6">
     <h1>Get paid to <strong>pet-sit</strong></h1>
     <p>Care for adorable pets while their owners are on vacation and earn extra cash!</p>
 
@@ -15,13 +15,7 @@
       <%= label_tag :dog %>
       <%= radio_button_tag 'species','dog' %>
       <br>
-      <br>
-      <span>
-        Start Date <%= date_field_tag :start %> End Date <%= date_field_tag :end %>
-      </span>
-      <br>
-      <br>
-      <%= submit_tag "See pets", class: "btn-pets btn-sm" %>
+      <%= submit_tag "See pets", class: "btn-pets btn-sm btn-block" %>
     <% end %>
   </div>
 </div>
