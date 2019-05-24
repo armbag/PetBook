@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require "date"
 require 'faker'
 
 Pet.destroy_all
@@ -68,6 +68,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user1,
+  from: Date.today,
+  to: Date.tomorrow + 40,
   remote_photo_url: "https://images.unsplash.com/photo-1483392707171-cb3e4b1cb8b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })
 Pet.create!({
@@ -77,6 +79,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user1,
+  from: Date.tomorrow,
+  to: Date.tomorrow + 40,
   remote_photo_url: "https://images.unsplash.com/photo-1455525928928-837c99714248?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80"
 })
 Pet.create!({
@@ -86,6 +90,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user2,
+  from: Date.today,
+  to: Date.tomorrow + 40,
   remote_photo_url: "https://images.unsplash.com/photo-1508609540374-67d1601ba520?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80"
 })
 Pet.create!({
@@ -95,6 +101,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user2,
+  from: Date.tomorrow,
+  to: Date.tomorrow + 23,
   remote_photo_url: "https://images.unsplash.com/photo-1513421181656-4446bef18317?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80"
 })
 Pet.create!({
@@ -104,6 +112,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user3,
+  from: Date.today,
+  to: Date.tomorrow,
   remote_photo_url: "https://images.unsplash.com/photo-1523626797181-8c5ae80d40c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
 })
 Pet.create!({
@@ -113,6 +123,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user3,
+  from: Date.tomorrow + 32,
+  to: Date.tomorrow + 21,
   remote_photo_url: "https://images.unsplash.com/photo-1497473376897-16fbb7552478?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })
 Pet.create!({
@@ -122,6 +134,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user4,
+  from: Date.tomorrow,
+  to: Date.tomorrow,
   remote_photo_url: "https://images.unsplash.com/photo-1475954704693-ac6850a71ee0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })
 Pet.create!({
@@ -131,6 +145,8 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user5,
+  from: Date.tomorrow + 7,
+  to: Date.tomorrow + 23,
   remote_photo_url: "https://images.unsplash.com/photo-1502083896352-259ab9e342d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })
 Pet.create!({
@@ -140,5 +156,10 @@ Pet.create!({
   age: %w(1 2 3 4 5 6 7 8 9).sample,
   price: "50",
   owner: user6,
+  from: Date.tomorrow + 10,
+  to: Date.tomorrow + 23,
   remote_photo_url: "https://images.unsplash.com/photo-1446231855385-1d4b0f025248?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 })
+
+
+
