@@ -1,19 +1,20 @@
-<div class="bg-profile">
-  <div class="petfile-block justify-content-center">
-    <h1 class="text-center"> Profile</h1>
+<div class="bg-pet-profile">
+  <div class="justify-content-center">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-6">
           <div class="card justify-content-center">
-          <%= cl_image_tag(@pet.photo,class: 'main-img') %>
+            <h3 class="specialbluetext"><strong><%= @pet.name %></strong></h3>
+            <%= cl_image_tag(@pet.photo, class: 'main-img') %>
           <br>
-              <p>Name: <%= @pet.name %></p>
-              <p>Species: <%= @pet.species %></p>
-              <p>Bio: <%= @pet.bio %> </p>
+              <p> <%= @pet.bio %> </p>
+              <p>Species : <%= @pet.species %></p>
               <p>Age: <%= @pet.age %></p>
-              <p>Hourly Price: <%= @pet.price %></p>
-              <%= link_to "Book Me", user_path, class: "btn btn-pets" %></p>
+              <p>Sitter receives $<%= @pet.price %>/hour</p>
+              <p>Owned by <%= @pet.owner.name %></p>
+              <%= link_to "Book me!", user_path, class: "btn btn-pets" %></p>
         </div>
       </div>
     </div>
   </div>
 </div>
+

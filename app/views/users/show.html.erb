@@ -1,81 +1,35 @@
 <div class="bg-profile">
   <div class="profile-block justify-content-center">
-    <h1 class="text-center">My Profile</h1>
-    <br>
-
+    <h1 class="text-center"><%= @user.name.capitalize %></h1>
     <%=cl_image_tag(@user.avatar, width: 120, height: 120, :crop => :thumb, gravity: :face, class: "card-trip-user avatar-bordered") %>
-    <br>
-    <br>
-    <p class="text-center">Hi <%= @user.name.capitalize %>!</p>
-    <p class="text-center">Address: <%= @user.location %></p>
+    <p class="text-center"><%= @user.location %></p>
     <p class="text-center">My Current Listings</p>
-    <div class="row">
-
     <% @user.pets.each do |pet| %>
-
-      <div class="col-12 col-lg-6">
-        <div class="card">
-
-          <%= link_to pet_path(pet) do %>
-            <div class="card-trip p-4 m-2">
-              <%= cl_image_tag(pet.photo, class: 'main-img') %>
-              <div class="card-trip-infos">
-                <div>
-                  <p>Name: <%= pet[:name] %></p>
-                  <p>Bio: <%= pet[:bio] %></p>
-                  <p>Species: <%= pet[:species] %></p>
-                  <p>Age: <%= pet[:age] %></p>
-                  <p>Hourly price: <%= pet[:price] %></p>
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="card">
+            <%= link_to pet_path(pet) do %>
+              <div class="card-trip p-4 m-2">
+                <%= cl_image_tag(pet.photo, class: 'main-img') %>
+                <div class="card-trip-infos">
+                  <h2><%= pet[:name] %></h2>
+                  <p>Rate: $<%= pet[:price] %>/hour</p>
                   <br>
-                  <%= link_to "View Listing", pet_path(pet), class: "btn btn-pets" %></p>
+                  <%= link_to "See details", pet_path(pet), class: "btn btn-pets" %>
                 </div>
-                <%= cl_image_tag(pet.owner.avatar, :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered") %>
               </div>
-            </div>
-          <% end %>
-
-
-
+            <% end %>
+          </div>
         </div>
-      </div>
-
     <% end %>
 
 
     </div>
     <br>
     <br>
-    <%= link_to "Add a Pet", new_pet_path, class: "btn btn-pets" %></p></h1>
-    <h1>Current Bookings</h1>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <%= link_to "Add a Pet", new_pet_path, class: "btn btn-pets" %></p></h1>
+      <h1>Current Bookings</h1>
+    </div>
 
 
 
