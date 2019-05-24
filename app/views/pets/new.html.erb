@@ -7,7 +7,7 @@
       <%= simple_form_for [@pet] do |f| %>
         <%= f.input :name, input_html: {placeholder: "Your pet's name"} %>
         <%= f.input :species, as: :radio_buttons, collection: %w[Dog Cat] %>
-        <%= f.input :bio, input_html: {placeholder: "Tell us about your pet! Include any details you want a potential pet-sitter to know."} %>
+        <%= f.input :bio, input_html: {placeholder: "Include any details you would want your pet-sitter to know."} %>
         <%= f.input :age, input_html: {placeholder: 1} %>
         <span>Hourly<%= f.input :price, input_html: {value: 15} %></span>
         <%= f.input :photo %>

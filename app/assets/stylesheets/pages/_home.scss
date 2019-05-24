@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.specialbluetext {
+  color: #00C5E0
+}
+
 .bg {
   background-image:url("https://images.unsplash.com/photo-1526363269865-60998e11d82d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-repeat: no-repeat;
@@ -16,18 +20,18 @@
   border-radius: 4px;
 }
 
-
 .card a {
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .card .main-img {
   width: 100%;
+  border-radius: 4px;
 }
 
 .card p {
   opacity: .5;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .card .avatar-bordered {
@@ -35,15 +39,12 @@
 }
 
 .card {
-  border-radius: 3px;
-  box-shadow: 0 0 5px rgb(230,230,230);
+  border-radius: 4px;
   text-align: center;
   padding: 20px;
   border: 1px solid rgb(230,230,230);
-  text-decoration:none;
+  text-decoration: none;
 }
-
-
 
 .cards {
   display: flex;
