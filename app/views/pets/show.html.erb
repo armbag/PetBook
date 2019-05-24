@@ -2,8 +2,8 @@
   <div class="row justify-content-center">
         <div class="justify-content-center">
           <div class="col-12 col-lg-6 justify-content-center">
-          <div class="pet-info-card justify-content-center">
-            <%= cl_image_tag(@pet.photo, class: "pet-avatar-bordered") %>
+          <div class="info-card justify-content-center">
+            <%= cl_image_tag(@pet.photo, class: "pet-avatar-bordered", :width => 100, :height => 100, :crop => :thumb, :gravity => :face,)%>
           <br>
           <h3 class="specialbluetext mt-2"><strong><%= @pet.name %></strong></h3>
               <p> <%= @pet.bio %> </p>
@@ -11,11 +11,62 @@
               <p>Age: <%= @pet.age %></p>
               <p>Sitter receives $<%= @pet.price %>/hour</p>
               <p>Owned by <%= @pet.owner.name %></p>
-
               <p>Available dates: <%= @pet.from %> to <%= @pet.to %></p>
               <%= link_to "Contact the owner", new_pet_booking_path(@pet) , class: "btn btn-pets" %></p>
 
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal: Email recipient -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Your message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-pets" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalSent" data-name=<%= @pet.owner.name %>>Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal: Email sent-->
+<div class="modal fade" id="exampleModalSent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalSentLabel">Your message was sent!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Hold tight and wait for <%= @pet.owner.name %>'s response.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-pets" data-dismiss="modal">Great</button>
       </div>
     </div>
   </div>
