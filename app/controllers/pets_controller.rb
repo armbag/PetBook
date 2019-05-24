@@ -32,15 +32,14 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to user_path(@pet), notice: 'pet was successfully created.'
     else
-      format.html { render :new }
-      format.json { render json: @pet.errors, status: :unprocessable_entity }
       render :new
     end
   end
 
   def destroy
-    if current_user == @pet.user
+    if @pet.owner == current_user
       @pet.destroy
+      redirect_to user_path, notice: 'pet was successfully deleted.'
     end
   end
 

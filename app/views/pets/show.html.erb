@@ -1,6 +1,6 @@
 <div class="bg-pet-profile">
-  <div class="justify-content-center">
-        <div class="row justify-content-center">
+  <div class="row justify-content-center">
+        <div class="justify-content-center">
           <div class="col-12 col-lg-6 justify-content-center">
           <div class="info-card justify-content-center">
             <%= cl_image_tag(@pet.photo, class: "pet-avatar-bordered", :width => 100, :height => 100, :crop => :thumb, :gravity => :face,)%>
@@ -11,9 +11,8 @@
               <p>Age: <%= @pet.age %></p>
               <p>Sitter receives $<%= @pet.price %>/hour</p>
               <p>Owned by <%= @pet.owner.name %></p>
-
-              <p>From <%= @pet.from %> to <%= @pet.to %></p>
-              <button type="button" class="btn btn-pets" data-toggle="modal" data-target="#exampleModal" data-email=<%= @pet.owner.email %> data-pet=<%= @pet.name %> data-name=<%= @pet.owner.name %>>Contact the owner</button>
+              <p>Available dates: <%= @pet.from %> to <%= @pet.to %></p>
+              <%= link_to "Contact the owner", new_pet_booking_path(@pet) , class: "btn btn-pets" %></p>
 
         </div>
       </div>
