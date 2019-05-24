@@ -1,6 +1,6 @@
 <div class="bg">
-<div class="block">
-
+  <div class="block col-12 col-lg-6">
+    
   <h1>Get paid to <strong>pet-sit</strong></h1>
   <p>Care for adorable pets while their owners are on vacation and earn extra cash!</p>
 
@@ -25,53 +25,59 @@
   <br>
   <%= submit_tag "See pets", class: "btn-pets btn-sm" %>
 <% end %>
+    
 </div>
 
-</div>
 
 <div class="mx-auto mt-3 p-3">
 
-<h2 class="heading text-center p-3">Why use PetBooking ?</h2>
-  <div class="card-container text-center p-3 mt-3 d-flex justify-content-around">
+<h2 class="heading text-center p-3">Why use PetBooking?</h2>
+  <div class="card-container text-center p-3 mt-3 d-flex justify-content-around col-12">
     <div>
-      <div class="card card-image">
-        <img src="images/apply.svg" alt="">
-          <h3>Rent a Pet</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <div class="info-card info-card-image">
+        <%= image_tag "like.png" %>
+         <br>
+          <h3>Do what you love</h3>
+          <p>Need more cute cats and dogs in your life? We've got you covered.</p>
       </div>
     </div>
-
-      <div>
-      <div class="card card-image">
-        <img src="images/learn.svg" alt="">
-          <h3>Pick up Poop</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <div>
+      <div class="info-card info-card-image">
+        <%= image_tag "animal.png" %>
+        <br>
+          <h3>Make easy money</h3>
+          <p>Welocme to your new side-hustle. Cuddle up with someone's pet while they're away and get paid for it. It's that easy.</p>
       </div>
     </div>
-
-
-      <div>
-      <div class="card card-image">
-        <img src="images/product.svg" alt="">
-          <h3>Make money</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <div>
+      <div class="info-card info-card-image">
+        <%= image_tag "print.png" %>
+          <h3>Cute pets</h3>
+          <p>Need we say any more? If you want more cute dogs and cats in your life, you've come to the right place.</p>
       </div>
     </div>
-     </div>
-     </div>
+  </div>
+</div>
+
+
+
+
+</div>
 
 <div class="mx-auto mt-3 p-3">
-
-<h2 class="heading text-center p-3">Latest Reviews</h2>
+  
+<h2 class="heading text-center p-3">What are people saying about us?</h2>
   <div id="carouselExampleControls" class="carousel slide justify-content-center" data-ride="carousel">
 
-  <div class="carousel-inner justify-content-center">
+
+   <div class="carousel-inner justify-content-center">
     <div class="carousel-item active">
       <div class="card-container text-center p-4 mt-3 d-flex justify-content-around">
       <div class="block justify-content-center text-center">
       <h3 class="text-center">Great website !!</h3>
       <p class="text-center">Super easy to use !</p>
-      <p class="text-center">Amy - Lyon</p>
+      <p class="text-center">Max - Lyon</p>
+      <p class="card-trip-user"> <%= cl_image_tag "https://images.unsplash.com/photo-1554453433-9af917b6f571?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&q=50", :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "avatar-bordered" %></p>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -79,6 +85,8 @@
       </div>
       </div>
       </div>
+
+
 
 
       <div class="carousel-item">
@@ -87,6 +95,7 @@
       <h3 class="text-center">Great for Pet lovers</h3>
       <p class="text-center">Super easy to use !</p>
       <p class="text-center">Elle - Lyon</p>
+      <p class="card-trip-user"> <%= cl_image_tag "https://images.unsplash.com/photo-1493732839258-ca76fb5d09ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&q=80", :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered" %></p>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -102,6 +111,7 @@
       <h3 class="text-center">So Happy</h3>
       <p class="text-center">Super easy to use !</p>
       <p class="text-center">Cassie - Lyon</p>
+      <p class="card-trip-user"> <%= cl_image_tag "https://images.unsplash.com/photo-1542080681-b52d382432af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&q=80", :width => 40, :height => 40, :crop => :thumb, :gravity => :face, class: "card-trip-user avatar-bordered" %></p>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
